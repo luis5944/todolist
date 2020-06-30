@@ -1,0 +1,29 @@
+h1,
+h2 {
+  text-align: center;
+}
+
+#contenido {
+  margin-top: 40px;
+}
+.borrar-tweet,
+.borrar-tweet:hover {
+  float: right;
+  cursor: pointer;
+  color: green;
+  font-weight: bold;
+}
+.borrar-tweet-borrado,
+.borrar-tweet-borrado:hover {
+  float: right;
+  cursor: pointer;
+  color: red;
+  font-weight: bold;
+}
+
+.borrar-tweet:hover {
+  font-size: 18px;
+}
+.borrar-tweet-borrado:hover {
+  font-size: 18px;
+}
