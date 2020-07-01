@@ -31,8 +31,11 @@ function agregarTweet(e) {
 
   let existe = false;
 
+  const dateF = new Date();
+  const dateFormat =
+    dateF.getDate() + "/" + (dateF.getMonth() + 1) + "/" + dateF.getFullYear();
   //cogemos el valor del textarea
-  const valor = document.getElementById("tweet").value;
+  const valor = document.getElementById("tweet").value + "\n" + dateFormat;
 
   datosA.forEach((element) => {
     if (element === valor) {
@@ -68,6 +71,7 @@ function crearElemento(valor, listado, clase, letra) {
   botonBorrar.innerText = letra;
   //creamos un elemento con el valor del texto y el boton de eliminar
   const li = document.createElement("li");
+  const fecha = new Date();
   li.textContent = valor;
   li.appendChild(botonBorrar);
 
@@ -90,7 +94,12 @@ function borrarTweet(e) {
 
     //Para meterlo en cosas hechas
     borrarTweetLocalStorage(e.target.parentElement.textContent);
-    crearElemento(elementoBorrado, listaTweetsBorrados, "borrar-tweet-borrado","X");
+    crearElemento(
+      elementoBorrado,
+      listaTweetsBorrados,
+      "borrar-tweet-borrado",
+      "X"
+    );
     agregarTweetLocalStorage(
       elementoBorrado,
       "tweets-borrados",
